@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.15.9/theme-chalk/index.css">
+    <style>
+        body{
+            background: #f2f5f7;
+            font-family: microsoft yahei;
+        }
+        ul {
+            white-space: nowrap;
+            height: 70px;
+            width: 880px;
+            overflow: hidden;
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        li {
+            height: 70px;
+            float: left;
+            white-space: nowrap;
+            position: relative;
+            margin-left: 20px;
+
+        }
+
+        a {
+            color: #0a7eb8;
+            text-decoration: none;
+        }
+
+        .deanlogo {
+            float: left;
+            color: #fff;
+
+
+            display: block;
+
+        }
+
+        .deanlogo i {
+            color: #fff;
+            font-size: 40px;
+            display: inline-block;
+            margin-top: 15px;
+            margin-right: 10px;
+            float: left;
+        }
+
+        .deanlogo span {
+            color: #ffffff;
+            font-size: 25px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <el-container>
+        <el-header
+                style="height: 70px; background-color: rgba(0,0,0,0.1);width: 100%;position:fixed;z-index: 2;display: block;margin: 0 auto">
+
+            <div style="width: 1180px;min-width: 1180px;margin: 0 auto;display: block">
+                <div class="deanlogo">
+                    <a href="">
+                        <span>烘焙馆</span>
+                    </a>
+                </div>
+
+                <div style="margin: 0 auto; position:relative;">
+                    <ul>
+                        <li>
+                            <el-button size="mini" round>首页</el-button>
+                        </li>
+                        <li>
+                            <el-button size="mini" round>资讯</el-button>
+                        </li>
+                        <li>
+                            <el-button size="mini" round>食谱</el-button>
+                        </li>
+                        <li>
+                            <el-button size="mini" round>招聘</el-button>
+                        </li>
+                        <li>
+                            <el-button size="mini" round>分类</el-button>
+                        </li>
+                        <li style="float:right;margin-left: 10px;display: block;margin-top:3px;">
+                            <img src="https://www.hongbeiguan.com/template/dean_gdcolor_200501/deancss/common/avar.png"
+                                 width="30" height="30" style="margin: 0 auto ;border-radius: 50%;">
+                        </li>
+                        <li style="float:right; margin-right:60px;height: 70px;font-size: 30px;font-weight: bold;color:#fff;cursor: pointer">
+                            <i class="el-icon-search"></i>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </el-header>
+        <el-main style="width: 1180px;margin: 0 auto;">
+            <div style="position:relative;z-index: 1;display: block;margin: 0 auto;">
+                <div style="margin: 0 auto">
+                    <el-carousel style="height: 610px;background-repeat: no-repeat;">
+                        <el-carousel-item v-for="url in bannerArr" style="height: 610px;overflow: hidden">
+                            <img :src="url" style="display: block;margin: 0 auto;height: 100%;">
+                        </el-carousel-item>
+                    </el-carousel>
+                </div>
+
+            </div>
+        </el-main>
+        <el-footer>
+            <div style="width: 100%; height: 139px; background-color: #3385ff; color: #ffffff;position:relative;z-index: 1"></div>
+            <div></div>
+            <div></div>
+        </el-footer>
+    </el-container>
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://cdn.staticfile.org/vue/2.6.14/vue.min.js"></script>
+<!-- import JavaScript -->
+<script src="https://cdn.staticfile.org/element-ui/2.15.9/index.min.js"></script>
+<script>
+    let v = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                bannerArr: ["https://www.hongbeiguan.com/template/dean_gdcolor_200501/deancss/hdp/2.jpg",
+                    "https://www.hongbeiguan.com/template/dean_gdcolor_200501/deancss/hdp/3.jpg",
+                    "https://www.hongbeiguan.com/template/dean_gdcolor_200501/deancss/hdp/1.jpg"]
+            }
+        },
+        methods: {}
+    })
+</script>
+</html>
